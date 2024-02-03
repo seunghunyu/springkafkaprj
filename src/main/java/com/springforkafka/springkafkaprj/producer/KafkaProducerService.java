@@ -16,10 +16,9 @@ public class KafkaProducerService {
     private final KafkaTemplate kafkaTemplate;
     private static int runningId = 0;
 
-    public void producerMessage(){
-        log.info("Produce Message - BEGIN");
-        String message = String.format("메세지를 전송 하였습니다.");
-        kafkaTemplate.send("TEST_TOPICc", message);
-        log.info("Produce Message - END {}", message);
+    public void producerMessage(String topic, String payload){
+        //log.info("sending payload = {} , Topic = {}", payload, topic);
+        //kafkaTemplate.send("TEST_TOPIC", payload);
+        kafkaTemplate.send(topic,payload);
     }
 }

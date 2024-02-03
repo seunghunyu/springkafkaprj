@@ -14,6 +14,9 @@ class KafkaProducerServiceTest {
 
     @Test
     void sendMessage(){
-        kafkaProducerService.producerMessage();
+        String topic = "TEST_TOPIC";
+        String payload = "test message!!";
+        kafkaProducerService.producerMessage(topic, payload);
+
     }
 }
